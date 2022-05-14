@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
+import 'appPages/appPages.dart';
 import 'body.dart';
 
 void main() {
@@ -11,11 +12,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
+      theme: ThemeData.light(),
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Body(),
-      ),
+      getPages: appPages,
+      initialRoute: Body.routeName,
     );
   }
 }

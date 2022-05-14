@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:neonflake/Login/LoginScreen.dart';
+import 'package:neonflake/SignUp/signUpScreen.dart';
 
 import 'background.dart';
 import 'componets/button.dart';
 
 class Body extends StatelessWidget {
-  static const routeName = 'body';
+  static const routeName = '/body';
   const Body({
     Key? key,
   }) : super(key: key);
@@ -33,6 +36,7 @@ class Body extends StatelessWidget {
             text: 'LogIn',
             color: Color.fromRGBO(153, 28, 172, 1),
             onPressed: () {
+              Get.to(LoginScreen());
               print('LogIn..............');
             },
           ),
@@ -41,6 +45,7 @@ class Body extends StatelessWidget {
             text: 'SignUp',
             color: Color.fromRGBO(241, 212, 247, 1),
             onPressed: () {
+              Get.to(SignUpScreen());
               print('SignUp...............');
             },
             textColor: Colors.black,

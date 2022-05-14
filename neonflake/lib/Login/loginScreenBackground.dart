@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class BackGround extends StatelessWidget {
+class LoginScreenBackground extends StatelessWidget {
   final Widget child;
-  const BackGround({
+  LoginScreenBackground({
     Key? key,
     required this.child,
   }) : super(key: key);
@@ -12,26 +12,22 @@ class BackGround extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
-        height: size.height,
         width: double.infinity,
+        height: size.height,
         child: Stack(
           alignment: Alignment.center,
           children: <Widget>[
             Positioned(
               top: 0,
               left: 0,
-              child: Image.asset(
-                'assets/main_top.png',
-                width: size.width * 0.3,
-              ),
+              child: Image.asset('assets/main_top.png'),
+              width: size.width * 0.35,
             ),
             Positioned(
               bottom: 0,
-              left: 0,
-              child: Image.asset(
-                'assets/main_bottom.png',
-                width: size.width * 0.2,
-              ),
+              right: 0,
+              child: Image.asset('assets/login_bottom.png'),
+              width: size.width * 0.5,
             ),
             child
           ],

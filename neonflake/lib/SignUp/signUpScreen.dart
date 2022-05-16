@@ -6,6 +6,8 @@ import 'package:neonflake/Login/loginScreen.dart';
 import '../Login/loginScreenBackground.dart';
 import '../componets/button.dart';
 import '../componets/kTextFormField.dart';
+import '../movieGridScreen/MovieGridScreen.dart';
+import '../movieGridScreen/movieApi.dart';
 
 class SignUpScreen extends StatefulWidget {
   static const routeName = '/signupScreen';
@@ -133,12 +135,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 
-  void _signUp() {
+  Future<void> _signUp() async {
     var state = _formKey.currentState;
     if (state!.validate() == null) return;
     if (state.validate()) {
       print('Write SignUp API here');
-      Get.to(LoginScreen());
+      var Data = await getMovieDetails();
+      Get.to(MovieGridScreen(), arguments: {"Data": Data});
     }
   }
 }

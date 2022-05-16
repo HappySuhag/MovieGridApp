@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:neonflake/componets/button.dart';
+import 'package:neonflake/movieGridScreen/movieApi.dart';
+import 'package:neonflake/movieGridScreen/movieGridScreen.dart';
 
 import '../componets/kTextFormField.dart';
 import 'loginScreenBackground.dart';
@@ -47,7 +49,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     hintText: 'Enter your email',
                     icon: Icons.person,
                     keyboardType: TextInputType.emailAddress,
-                    onFieldSubmitted: (s) => Get.focusScope!.nextFocus(),
+                    onFieldSubmitted: (s) => _login(),
                     onChanged: (s) {
                       _email = s;
                     },
@@ -103,10 +105,12 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  void _login() {
+  Future<void> _login() async {
     var state = _formKey.currentState;
     if (state!.validate() == null) return;
     if (state.validate()) {
+      var Data = await getMovieDetails();
+      Get.to(MovieGridScreen(), arguments: {"Data": Data});
       print('Write Login API here');
     }
   }

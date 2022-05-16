@@ -89,12 +89,11 @@ class CastCard extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Container(
-      margin: EdgeInsets.only(right: 5),
-      width: size.width * 0.25,
+      width: size.width * 0.4,
       child: Column(
         children: [
           Container(
-            height: size.width * 0.25,
+            height: size.width * 0.2,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               image: DecorationImage(
@@ -111,6 +110,11 @@ class CastCard extends StatelessWidget {
             style: Theme.of(context).textTheme.bodyText1,
           ),
           SizedBox(height: 3),
+          Text(
+            'As: ${cast['asCharacter']}',
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.bodyText2,
+          ),
         ],
       ),
     );

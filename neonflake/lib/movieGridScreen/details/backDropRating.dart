@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:neonflake/movieGridScreen/details/trailerVideo.dart';
 
 class BackDropRating extends StatelessWidget {
   const BackDropRating({
@@ -17,16 +19,34 @@ class BackDropRating extends StatelessWidget {
       // color: Colors.black,
       child: Stack(
         children: [
-          Container(
-            height: size.height * 0.4 - 50,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(50),
-              ),
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: NetworkImage(movie['thumbnail']),
-              ),
+          InkWell(
+            onTap: () {
+              Get.to(TrailerVideo(), arguments: {
+                "videoLink": movie['video'],
+                'title': movie['title']
+              });
+            },
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Container(
+                  height: size.height * 0.4 - 50,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(50),
+                    ),
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: NetworkImage(movie['thumbnail']),
+                    ),
+                  ),
+                ),
+                Icon(
+                  Icons.play_circle_fill_outlined,
+                  color: Colors.white,
+                  size: size.width * 0.15,
+                )
+              ],
             ),
           ),
           Positioned(

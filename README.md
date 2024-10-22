@@ -34,7 +34,8 @@ To run this project on your local machine, follow these steps:
     ```
 
 ## Screenshots
-Add screenshots of the app’s interface showcasing movie search results, cast details, IMDb ratings, sentiment analysis, and recommendations.
+Coming Soon........
+Will be add screenshots of the app’s interface showcasing movie search results, cast details, IMDb ratings, sentiment analysis, and recommendations.
 
 ## Technologies Used:
 - **Flutter**: A UI toolkit for building natively compiled mobile applications.
